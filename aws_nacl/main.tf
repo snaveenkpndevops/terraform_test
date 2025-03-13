@@ -1,5 +1,5 @@
 resource "aws_network_acl" "network_acl" {
-  for_each = var.vpcs # Iterate over each VPC in the provided map
+  for_each =  var.vpcs # Iterate over each VPC in the provided map
 
   vpc_id     = each.key              # Assign the NACL to the corresponding VPC
   subnet_ids = each.value.subnet_ids # Associate the NACL with the specified subnets
